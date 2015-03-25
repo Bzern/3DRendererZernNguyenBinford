@@ -23,6 +23,6 @@ public class Plane3D {
       return k;
    }
    public double getZ(Point2D bob){
-      return (bob.getX()*a*-1 + bob.getY()*b*-1-k)/c
+      return (bob.getX()*a*-1 + bob.getY()*b*-1-k)/c;
    }
 }
