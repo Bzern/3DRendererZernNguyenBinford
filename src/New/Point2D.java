@@ -1,10 +1,15 @@
 
 public class Point2D {
-   private static double x, y;
+   private double x, y;
 
-	public Point2D(double x, double y) {
-		x = x;
-		y = y;
+	public Point2D(double x1, double y1) {
+		x = x1;
+		y = y1;
+	}
+   
+   public Point2D() {
+		x = 0.0;
+		y = 0.0;
 	}
 
 	public Point2D(Point2D p) {
@@ -21,19 +26,19 @@ public class Point2D {
 		x = x + b.getX();
 		y = y + b.getY();
 	}
-   public static double getX() {
+   public double getX() {
       return x;
    }
    
-   public static double getY() {
+   public double getY() {
       return y;
    }
    
-   public static void setX(double nx) {
+   public void setX(double nx) {
       x = nx;
    }
    
-   public static void setY(double ny) {
+   public void setY(double ny) {
       y = ny;
    }
   
