@@ -1,8 +1,8 @@
 import java.awt.geom.Point2D;
 
 public class LinearEquation2D {
-	private static Vector2D slope, c, d;
-	private static double b = 0;
+	private Vector2D slope, c, d;
+	private double b = 0;
 
 	public LinearEquation2D(Vector2D point1, Vector2D point2) {
 		this.c = slope;
@@ -55,37 +55,36 @@ public class LinearEquation2D {
 						.getY() / w.getSlope().getX()))));
 	}
 	
-	public static Vector2D getSlope(){
+	public Vector2D getSlope(){
 		return slope;
 	}
 	
-	public static Vector2D getC(){
+	public Vector2D getC(){
 		return c;
 	}
 	
-	public static Vector2D getD(){
+	public Vector2D getD(){
 		return d;
 	}
 	
-	public static double getB(){
+	public double getB(){
 		return b;
 	}
 	
-	public static void setSlope(Vector2D vec){
+	public void setSlope(Vector2D vec){
 		slope = vec;
 	}
 	
-	public static void setC(Vector2D vec){
+	public void setC(Vector2D vec){
 		c = vec;
 	}
 	
-	public static void setD(Vector2D vec){
+	public void setD(Vector2D vec){
 		d = vec;
 	}
 	
-	public static void setB(double d){
+	public void setB(double d){
 		b = d;
 	}
 	
 }
-

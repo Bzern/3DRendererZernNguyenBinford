@@ -1,5 +1,5 @@
 public class Interval {
-	private static double min, max;
+	private double min, max;
 
 	public boolean contains(double x) {
 		return (x >= min && x <= max);

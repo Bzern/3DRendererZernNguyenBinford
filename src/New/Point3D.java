@@ -1,12 +1,12 @@
 import java.awt.geom.Point2D;
 
 public class Point3D {
-	private static double x, y, z;
+	private double x, y, z;
 
-	public Point3D(double x, double y, double z) {
-		x = x;
-		y = y;
-		z = z;
+	public Point3D(double x1, double y1, double z1) {
+		x = x1;
+		y = y1;
+		z = z1;
 
 	}
 
@@ -26,7 +26,7 @@ public class Point3D {
 		double x1 = x - b.getX();
 		double y1 = y - b.getY();
 		double z1 = z - b.getZ();
-      return Point3D(x1,y1,z1);
+      return new Point3D(x1,y1,z1);
 	}
    
 	public void add(Point3D b) {
@@ -77,11 +77,15 @@ public class Point3D {
 		return d;
 
 	}
-   public Point3D crossprod(Point3D a,Point3D p){
+
+
+
+   public Point3D crossprod(Point3D a,Point3D b){
       Point3D cross = new Point3D(a.getY()*b.getZ()-a.getZ()*b.getY(),a.getX()*b.getZ()-a.getZ()*b.getX(),
       a.getX()*b.getY()-a.getY()*b.getX());
       return cross;
    }
+
 	public Point3D scale(double i) {
 		Point3D p = new Point3D(this);
 		p.setX(getX() * i);
@@ -91,27 +95,27 @@ public class Point3D {
 
 	}
   
-   public static double getX() {
+   public double getX() {
       return x;
    }
    
-   public static double getY() {
+   public double getY() {
       return y;
    }
    
-   public static double getZ() {
+   public double getZ() {
       return z;
    } 
    
-   public static void setX(double nx) {
+   public void setX(double nx) {
       x = nx;
    }
    
-   public static void setY(double ny) {
+   public void setY(double ny) {
       y = ny;
    }
    
-   public static void setZ(double nz) {
+   public void setZ(double nz) {
       z = nz;
    }  
   

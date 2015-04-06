@@ -1,6 +1,6 @@
 public class Vector2D {
-	private static double x = 0;
-	private static double y = 0;
+	private double x = 0;
+	private double y = 0;
 
 	public Vector2D(double x, double y) {
 		this.x = x;
