@@ -24,11 +24,11 @@ public class Interval {
       return max;
    }
    
-   public static void setMin(nmin) {
+   public static void setMin(double nmin) {
       min = nmin;
    }
    
-   public static void setMax(nmax) {
+   public static void setMax(double nmax) {
       max = nmax;
    }
 }
