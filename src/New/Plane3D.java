@@ -1,5 +1,5 @@
 public class Plane3D {
-   private static double a,b,c,k;
+   private double a,b,c,k;
    
    public Plane3D(Point3D p1, Point3D p2, Point3D p3){
       System.out.println(p1);

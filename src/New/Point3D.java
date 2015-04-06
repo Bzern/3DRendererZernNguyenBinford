@@ -77,15 +77,15 @@ public class Point3D {
 		return d;
 
 	}
-<<<<<<< HEAD
 
-=======
+
+
    public Point3D crossprod(Point3D a,Point3D b){
       Point3D cross = new Point3D(a.getY()*b.getZ()-a.getZ()*b.getY(),a.getX()*b.getZ()-a.getZ()*b.getX(),
       a.getX()*b.getY()-a.getY()*b.getX());
       return cross;
    }
->>>>>>> origin/master
+
 	public Point3D scale(double i) {
 		Point3D p = new Point3D(this);
 		p.setX(getX() * i);

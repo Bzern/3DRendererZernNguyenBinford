@@ -2,10 +2,10 @@ import java.awt.Color;
 
 
 public class Polygon3D implements Comparable<Polygon3D>{
-	private static Point3D[] polygon3Dpoints;
-	private static Color bordercolor;
-	private static Color fillcolor;
-	private static Double distancetocenter = 0.0;
+	private Point3D[] polygon3Dpoints;
+	private Color bordercolor;
+	private Color fillcolor;
+	private Double distancetocenter = 0.0;
 	
    public Polygon3D(Point3D[] a){
 		polygon3Dpoints = a;
