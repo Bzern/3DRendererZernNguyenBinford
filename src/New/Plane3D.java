@@ -2,9 +2,6 @@ public class Plane3D {
    private double a,b,c,k;
    
    public Plane3D(Point3D p1, Point3D p2, Point3D p3){
-      System.out.println(p1);
-      System.out.println(p2);
-      System.out.println(p3);
       Point3D vec1 = p1.subtractRetP(p2);
       System.out.println(vec1);
       Point3D vec2 = p1.subtractRetP(p3);
@@ -43,7 +40,7 @@ public class Plane3D {
       Point3D p3 = new Point3D(9,7,2);
       System.out.println(p1+"\n"+p2+"\n"+p3);
       Plane3D bob = new Plane3D(p1, p2, p3);
-      //System.out.println(bob.getA() +" "bob.getB()+" "+bob.getC()+bob.getZ(new Point2D(3,6)));
+      System.out.println(bob.getA() +" "bob.getB()+" "+bob.getC()+bob.getZ(new Point2D(3,6)));
    
    }
 }
