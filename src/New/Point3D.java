@@ -26,7 +26,7 @@ public class Point3D {
 		double x1 = x - b.getX();
 		double y1 = y - b.getY();
 		double z1 = z - b.getZ();
-      return Point3D(x1,y1,z1);
+      return new Point3D(x1,y1,z1);
 	}
    
 	public void add(Point3D b) {
@@ -77,7 +77,7 @@ public class Point3D {
 		return d;
 
 	}
-   public Point3D crossprod(Point3D a,Point3D p){
+   public Point3D crossprod(Point3D a,Point3D b){
       Point3D cross = new Point3D(a.getY()*b.getZ()-a.getZ()*b.getY(),a.getX()*b.getZ()-a.getZ()*b.getX(),
       a.getX()*b.getY()-a.getY()*b.getX());
       return cross;
