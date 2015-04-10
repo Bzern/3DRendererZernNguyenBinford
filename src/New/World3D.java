@@ -8,22 +8,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import javax.swing.Timer;
+import java.awt.event.KeyListener;
 
-public class World3D extends JPanel implements Runnable, ActionListener {
+
+public class World3D implements Runnable{
 	ArrayList<GameObject> objects = new ArrayList<GameObject>();
 	Camera camera = new Camera();
 	Frame window = new Frame();
 	Thread r;
+   boolean quit = false;
 
 	public World3D() {
 		GraphicsDevice g = GraphicsEnvironment.getLocalGraphicsEnvironment()
@@ -70,10 +64,34 @@ public class World3D extends JPanel implements Runnable, ActionListener {
 
 	@Override
 	public void run() {
-		while (true) {
-         addKeyListener(new Al());
-         setFocusable(true);
-			try {
+   window.addKeyListener(new KeyListener(){
+    private boolean pressed;
+    private int pressedKey;
+    @Override public void keyTyped(    final KeyEvent e){
+      quit = true;
+      pressed=false;
+      pressedKey=-1;
+      System.out.println("Key_Pressed");
+    }
+    @Override public void keyPressed(    final KeyEvent e){
+        quit = true;
+        pressedKey=e.getKeyCode();
+        pressed=true;
+        System.out.println("Key_Pressed");
+    }
+    
+    @Override public void keyReleased(    final KeyEvent e){
+      pressed=false;
+      quit = true;
+      System.out.println("Key_Pressed");
+    }
+    
+  });
+      
+      while (true) {
+			 if(quit)
+            System.exit(0);
+          try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -82,12 +100,12 @@ public class World3D extends JPanel implements Runnable, ActionListener {
 			for (GameObject a : objects) {
 				a.act();
 			}
-			Graphics g = window.getBufferStrategy().getDrawGraphics();
+         Graphics g = window.getBufferStrategy().getDrawGraphics();
 			render(g);
 			g.dispose();
-			window.getBufferStrategy().show();
-
+         window.getBufferStrategy().show();
 		}
+      
 	};
 
 }
