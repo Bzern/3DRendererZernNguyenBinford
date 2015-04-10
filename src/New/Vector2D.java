@@ -35,27 +35,26 @@ public class Vector2D {
 	public void printVector() {
 		System.out.println("(" + x + "," + y + ")");
 	}
-   
-   public String toString()
-   {
-      String ret = ("(" + x + "," + y + ")");
-      return ret;
-   }
-   
-   public double getX() {
-      return x;
-   }
-   
-   public double getY() {
-      return x;
-   }
-   
-   public void setX(double xx) {
-      x = xx;
-   }
-   
-   public void setY(double yy) {
-      y = yy;
-   }
+
+	public String toString() {
+		String ret = ("(" + x + "," + y + ")");
+		return ret;
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setX(double xx) {
+		x = xx;
+	}
+
+	public void setY(double yy) {
+		y = yy;
+	}
 
 }
