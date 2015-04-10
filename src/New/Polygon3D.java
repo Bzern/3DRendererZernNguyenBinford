@@ -47,10 +47,10 @@ public class Polygon3D implements Comparable<Polygon3D>{
    }
    
    public void setBordercolor(Color col){
-      fillcolor = col;
+      bordercolor = col;
    }
    public void setFillcolor(Color col){
-      bordercolor = col;
+      fillcolor = col;
    }
    public void setPolygon3Dpoints(Point3D[] points){
       polygon3Dpoints = points;
