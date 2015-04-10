@@ -68,22 +68,19 @@ public class World3D implements Runnable{
     private boolean pressed;
     private int pressedKey;
     @Override public void keyTyped(    final KeyEvent e){
-      quit = true;
       pressed=false;
       pressedKey=-1;
-      System.out.println("Key_Pressed");
     }
     @Override public void keyPressed(    final KeyEvent e){
-        quit = true;
         pressedKey=e.getKeyCode();
         pressed=true;
+        if(pressedKey == 27)
+          quit = true;
         System.out.println("Key_Pressed");
     }
     
     @Override public void keyReleased(    final KeyEvent e){
       pressed=false;
-      quit = true;
-      System.out.println("Key_Pressed");
     }
     
   });
