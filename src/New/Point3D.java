@@ -38,7 +38,7 @@ public class Point3D {
 	public double distance(Point3D a) {
 		Double distance = 0.0;
 		distance = Math.sqrt(Math.pow(x - a.getX(), 2) + Math.pow(y - a.getY(), 2)
-				+ Math.pow(z - a.getY(), 2));
+				+ Math.pow(z - a.getZ(), 2));
 		return distance;
 	}
 
@@ -78,19 +78,11 @@ public class Point3D {
 
 	}
 
-
-
-   public Point3D crossprod(Point3D a,Point3D b){
-      Point3D cross = new Point3D(a.getY()*b.getZ()-a.getZ()*b.getY(),a.getX()*b.getZ()-a.getZ()*b.getX(),
-      a.getX()*b.getY()-a.getY()*b.getX());
-      return cross;
-   }
-
 	public Point3D scale(double i) {
 		Point3D p = new Point3D(this);
-		p.setX(getX() * i);
-		p.setY(getY() * i);
-		p.setZ(getZ() * i);
+		p.setX(p.getX() * i);
+		p.setY(p.getY() * i);
+		p.setZ(p.getZ() * i);
 		return p;
 
 	}
