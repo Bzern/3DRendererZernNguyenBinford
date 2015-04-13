@@ -18,6 +18,7 @@ public class World3D implements Runnable{
 	Thread r;
    Point3D mover = new Point3D(.2,.2,.2);
    Point3D orienter = new Point3D(.02,.02,.02);
+   Point3D viewpos = new Point3D(.02,.02,.02);
    boolean quit = false;
 
 	public World3D() {
@@ -99,10 +100,14 @@ public class World3D implements Runnable{
           camera.orientation.setY(camera.orientation.getY()+orienter.getY());
         if(pressedKey == 85)
           camera.orientation.setY(camera.orientation.getY()-orienter.getY());
-        
+        if(pressedKey == 84)
+          camera.viewposition.setZ(camera.viewposition.getZ()+viewpos.getZ());
+        if(pressedKey == 71)
+          camera.viewposition.setZ(camera.viewposition.getZ()-viewpos.getZ());
+        System.out.println(camera.orientation);
         if(pressedKey == 27)
           quit = true;
-        System.out.println("Key_Pressed");
+//        System.out.println("Key_Pressed");
     }
     
     @Override public void keyReleased(    final KeyEvent e){
