@@ -16,6 +16,8 @@ public class World3D implements Runnable{
 	Camera camera = new Camera();
 	Frame window = new Frame();
 	Thread r;
+   Point3D mover = new Point3D(.2,.2,.2);
+   Point3D orienter = new Point3D(.02,.02,.02);
    boolean quit = false;
 
 	public World3D() {
@@ -73,6 +75,31 @@ public class World3D implements Runnable{
     @Override public void keyPressed(    final KeyEvent e){
         pressedKey=e.getKeyCode();
         pressed=true;
+        if(pressedKey == 87)
+          camera.position.setZ(camera.position.getZ()+mover.getZ());
+        if(pressedKey == 83)
+          camera.position.setZ(camera.position.getZ()-mover.getZ());
+        if(pressedKey == 65)
+          camera.position.setX(camera.position.getX()+mover.getX());
+        if(pressedKey == 68)
+          camera.position.setX(camera.position.getX()-mover.getX());
+        if(pressedKey == 69)
+          camera.position.setY(camera.position.getY()+mover.getY());
+        if(pressedKey == 81)
+          camera.position.setY(camera.position.getY()-mover.getY());
+        if(pressedKey == 73)
+          camera.orientation.setZ(camera.orientation.getZ()+orienter.getZ());
+        if(pressedKey == 75)
+          camera.orientation.setZ(camera.orientation.getZ()-orienter.getZ());
+        if(pressedKey == 74)
+          camera.orientation.setX(camera.orientation.getX()+orienter.getX());
+        if(pressedKey == 76)
+          camera.orientation.setX(camera.orientation.getX()-orienter.getX());
+        if(pressedKey == 79)
+          camera.orientation.setY(camera.orientation.getY()+orienter.getY());
+        if(pressedKey == 85)
+          camera.orientation.setY(camera.orientation.getY()-orienter.getY());
+        
         if(pressedKey == 27)
           quit = true;
         System.out.println("Key_Pressed");
