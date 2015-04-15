@@ -46,5 +46,10 @@ public class Point2D {
 		String str = ("(" + x + "," + y +")");
       return str;
 	}
-
+   
+   public boolean equals(Point2D p) {
+      if (x == p.getX() && y == p.getY())
+         return true;
+      return false;
+   }
 }
