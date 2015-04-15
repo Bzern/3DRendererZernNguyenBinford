@@ -33,7 +33,7 @@ public class Main {
 		z.faces[0].setFillcolor(Color.red);
 		Point3D[] j = new Point3D[4];
 		j[0] = a;
-		j[1] = e;
+     	j[1] = e;
 		j[2] = h;
 		j[3] = d;
 		z.faces[2] = new Polygon3D(j);
@@ -71,7 +71,6 @@ public class Main {
 		z.faces[1] = new Polygon3D(p);
 		z.faces[1].setBordercolor(Color.white);
 		z.faces[1].setFillcolor(Color.black);
-
 		world.objects.add(z);
 		world.camera.viewposition = new Point3D(0, 0, 0.9);
 	}
