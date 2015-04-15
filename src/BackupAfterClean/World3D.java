@@ -52,7 +52,7 @@ public class World3D implements Runnable{
 						}
 						p.addPoint(
 								(int) ((d.getX() * dim.getHeight() / 2) + dim.getWidth() / 2),
-								(int) ((d.getY() * dim.getHeight() / 2) + dim.getHeight() / 2));
+								(int) ((d.getY() * dim.getHeight() / 2) + dim.getWidth() / 2));
 					}
 					
 				}
