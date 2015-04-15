@@ -6,13 +6,10 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-	//	LinearEquation2D o = new LinearEquation2D(new Vector2D(1,1),new Vector2D(2,2));
-	//	LinearEquation2D v = new LinearEquation2D(new Vector2D(4,1),new Vector2D(4,2));
-		//LinearEquation2D.findLineInter(o,v).printVector();
-	//	o.slope.printVector();
-	//	System.out.println(o.b);
-	//	System.out.println(v.b);
-	//	v.slope.printVector();
+      /* TODO:
+      Fix Z rotation
+      implements Scanline rendering
+      */
 		World3D world = new World3D();
 		Point3D a = new Point3D(1, 1, 8);
 		Point3D b = new Point3D(2, 1, 8);
