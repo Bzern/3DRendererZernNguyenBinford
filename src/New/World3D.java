@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-public class World3D implements Runnable{
+public class World3D implements Runnable {
 	ArrayList<GameObject> objects = new ArrayList<GameObject>();
 	Camera camera = new Camera();
 	Frame window = new Frame();
