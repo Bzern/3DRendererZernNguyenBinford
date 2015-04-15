@@ -52,4 +52,20 @@ public class Point2D {
          return true;
       return false;
    }
+   
+   public Point2D multiply(double factor)
+   {
+      Point2D ret = new Point2D();
+      ret.setX(x*factor);
+      ret.setY(y*factor);
+      return ret;
+   }
+   
+   public Point2D multiply(double xfactor, double yfactor)
+   {
+      Point2D ret = new Point2D();
+      ret.setX(x*xfactor);
+      ret.setY(y*yfactor);
+      return ret;
+   }
 }
