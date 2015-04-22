@@ -10,8 +10,8 @@ public class Camera {
 		d.setY(d.getY() - position.getY());
 		d.setZ(d.getZ() - position.getZ());
 		d = d.rotate(orientation.scale(-1));
-		returnpoint.setX((d.getX() - viewposition.getX()) * (viewposition.getZ() / d.getZ()));
-		returnpoint.setY((d.getY() - viewposition.getY()) * (-viewposition.getZ() / d.getZ()));
+		returnpoint.setX((d.getX() * (viewposition.getZ() / d.getZ())) - viewposition.getX());
+		returnpoint.setY((d.getY() * (viewposition.getZ() / d.getZ())) - viewposition.getY());
 		if (d.getZ() > viewposition.getZ()) {
 			return returnpoint;
 		} else {

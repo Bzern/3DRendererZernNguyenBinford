@@ -55,7 +55,7 @@ public class Point3D {
 
 	}
 
-	public Point3D rotate(Point3D orientation) {
+   public Point3D rotate(Point3D orientation) {
 		Point3D d = new Point3D(this);
 		d.setX(Math.cos(orientation.getY())
 				* (-Math.sin(orientation.getZ()) * (d.getY()) + Math.cos(orientation.getZ())
@@ -77,7 +77,7 @@ public class Point3D {
 		return d;
 
 	}
-
+   
 	public Point3D scale(double i) {
 		Point3D p = new Point3D(this);
 		p.setX(p.getX() * i);

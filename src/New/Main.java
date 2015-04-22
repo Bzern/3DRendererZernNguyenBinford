@@ -69,7 +69,7 @@ public class Main {
 		z.faces[1].setBordercolor(Color.white);
 		z.faces[1].setFillcolor(Color.black);
 		world.objects.add(z);
-		world.camera.viewposition = new Point3D(0, 0, 0.9);
+		world.camera.viewposition = new Point3D(0, 0, 1.7);
 	}
 
 }

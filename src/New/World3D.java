@@ -49,9 +49,9 @@ public class World3D implements Runnable{
 				for (Point3D c : b.getPolygon3Dpoints()) {
 					Point2D d = camera.turn2Dto3D(c);
 					if (d != null) {
-						if (d.getX() >= 1 || d.getX() <= -1) {
+						/*if (d.getX() >= 1 || d.getX() <= -1) {
 							d.setX(Math.abs(d.getX()) / d.getX());
-						}
+						}*/
 						p.addPoint(
 								(int) ((d.getX() * dim.getHeight() / 2) + dim.getWidth() / 2),
 								(int) ((d.getY() * dim.getHeight() / 2) + dim.getHeight() / 2));
@@ -104,7 +104,7 @@ public class World3D implements Runnable{
           camera.viewposition.setZ(camera.viewposition.getZ()+viewpos.getZ());
         if(pressedKey == 71)
           camera.viewposition.setZ(camera.viewposition.getZ()-viewpos.getZ());
-        System.out.println(camera.orientation);
+        System.out.println(camera.position);
         if(pressedKey == 27)
           quit = true;
 //        System.out.println("Key_Pressed");
