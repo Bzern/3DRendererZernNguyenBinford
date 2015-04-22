@@ -9,7 +9,11 @@ public class GameObject {
 		for (Polygon3D p : faces) {
 			for (Point3D a : p.getPolygon3Dpoints()) {
 				Point3D c = a.rotate(new Point3D(0,0,0), new Point3D(
+<<<<<<< HEAD
 						0.0, 0.0, 0.006));
+=======
+						0.0, 0.0, 0.01));
+>>>>>>> origin/master
 				a.setX(c.getX());
 				a.setY(c.getY());
 				a.setZ(c.getZ());
