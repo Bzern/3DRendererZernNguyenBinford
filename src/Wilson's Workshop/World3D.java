@@ -45,22 +45,22 @@ public class World3D implements Runnable{
 				Polygon screenpoly = new Polygon();
             triList.add(triangle);
             for(int i=0; i<triList.size();i++){
+               Point3D[] depthTriangle = new Point3D[3];
+               int counter=0;
                for(Point3D 3dps: triList.at(i)){
                   double distfromcam = 3dps.distance(Camera);
-                  Point2D 2dp = camera.turn2Dto3D(3dps);
+                  Point2D 2dp = camera.turn2Dto3D(3dps); //returns a point (0 to .999, 0 to .999)
 					   if (2dp != null) {
-                       if (2dp.getX() >= 1 || 2dp.getX() <= -1) {
-                          2dp.setX(Math.abs(2dp.getX()) / 2dp.getX());
-                       }
-                  }
-                  
-                  
-                  Plane3D zCalculator = new Plane3D(
-                     (int) ((2dp.getX() * dim.getHeight() / 2) + dim.getWidth() / 2),
-                     (int) ((2dp.getY() * dim.getHeight() / 2) + dim.getWidth() / 2),
-                     distfromcam);
-                  
+                     Point3D depthpoint = new Point3D(
+                        (int) ((2dp.getX() * dim.getHeight() / 2) + dim.getWidth() / 2), //scales the point to scren
+                        (int) ((2dp.getY() * dim.getHeight() / 2) + dim.getHeight() / 2), //scale by height cuz make box
+                        distfromcam);
+                     depthTriangle[counter] = depthpoint;
+                     counter++;
+                  }  
                }
+               Plane3D zCalculator = new Plane3D(depthTriangle[0],depthTriangle[1],depthTriangle[2]);
+               counter = 0;
             }
 			}
 		}
