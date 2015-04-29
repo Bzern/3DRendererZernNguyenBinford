@@ -60,4 +60,17 @@ public class Polygon3D implements Comparable<Polygon3D>{
       distancetocenter = dist;
    }
    
+   public Point2D yInterval()
+   {
+      double low = polygon3Dpoints[0].getY();
+      double high = polygon3Dpoints[0].getY();
+      for(int i = 1; i< polygon3Dpoints.length; i++)
+      {
+         if(polygon3Dpoints[i].getY()<low)
+            low = polygon3Dpoints[i].getY();
+         if(polygon3Dpoints[i].getY()>high)
+            high = polygon3Dpoints[i].getX();
+      }
+      return new Point2D(low, high);
+   }
 }
