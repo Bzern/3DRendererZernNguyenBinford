@@ -203,7 +203,7 @@ public class ParametricLine
             if(count == 1||count==2)
                middle.add(i);
          }
-         System.out.println("0: "+counts[0]+"\n1: "+counts[1]+"\n2: "+counts[2]+"\n3: "+counts[3]);
+         //System.out.println("0: "+counts[0]+"\n1: "+counts[1]+"\n2: "+counts[2]+"\n3: "+counts[3]);
          if(counts[0]+counts[1]>=5||counts[2]+counts[3]>=5);
          else return new IntersectValue(2, new ParametricLine(points[middle.get(0)], points[middle.get(1)]));
       }
@@ -248,12 +248,4 @@ public class ParametricLine
       System.out.println(last);
    }
    
-   public static void main(String[] args)
-   {
-      test(-1.0, -1.0,  //Line 1 point 1
-            1.0, 1.0,   //Line 1 point 2
-            
-            0.0, 0.0,   //Line 2 point 1
-            2.0, 2.0);  //Line 2 point 2
-   }
 }
