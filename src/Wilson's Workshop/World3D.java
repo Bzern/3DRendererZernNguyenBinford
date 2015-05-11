@@ -14,7 +14,11 @@ import java.awt.event.KeyListener;
 public class World3D implements Runnable{
 	ArrayList<GameObject> objects = new ArrayList<GameObject>();
    ArrayList<Polygon3D> triList = new ArrayList<Polygon3D>();
-	Camera camera = new Camera();
+   ArrayList<Polygon3D> depthTriangles = new ArrayList<Polygon3D>();
+   ArrayList<Plane3D> planes = new ArrayList<Plane3D>();
+   ArrayList<Point2D> intervals = new ArrayList<Point2D>();
+	
+   Camera camera = new Camera();
 	Frame window = new Frame();
 	Thread r;
    Point3D mover = new Point3D(.2,.2,.2);
@@ -58,8 +62,11 @@ public class World3D implements Runnable{
                      depthTriangle[counter] = depthpoint;
                      counter++;
                   }  
-               }
+               }               
                Plane3D zCalculator = new Plane3D(depthTriangle[0],depthTriangle[1],depthTriangle[2]);
+               planes.add(zCalculator);
+               depthTriangles.add(new Polygon3D( depthTriangle));
+               intervals.add(new Polygon3D(depthTriangle).yInterval())
                counter = 0;
             }
 			}
